@@ -36,15 +36,17 @@
     "jest": "^24.8.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
     "recompose": "^0.30.0",
+    "redux": "^4.0.4",
     "sinon": "^7.3.2"
   },
   "peerDependencies": {
-    "recompose": "^0.30.0",
     "redux": "^4.0.0",
     "react-redux": "^7.1.0"
   },
   "dependencies": {
+    "is-plain-object": "^3.0.0",
     "ramda": "^0.26.1"
   }
 }
