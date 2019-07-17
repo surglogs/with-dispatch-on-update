@@ -1,0 +1,50 @@
+{
+  "name": "@surglogs/with-dispatch-on-update",
+  "version": "1.0.0",
+  "description": "HOC TODO:",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest ./src",
+    "build": "rm -rf ./lib && ./node_modules/.bin/babel -e 0 ./src -d ./lib",
+    "prepare": "npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/surglogs/with-dispatch-on-update"
+  },
+  "keywords": [
+    "react",
+    "hoc",
+    "redux",
+    "action"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/surglogs/with-dispatch-on-update/issues"
+  },
+  "homepage": "https://github.com/surglogs/with-dispatch-on-update#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^24.0.15",
+    "@types/sinon": "^7.0.13",
+    "babel-loader": "^8.0.6",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "recompose": "^0.30.0",
+    "sinon": "^7.3.2"
+  },
+  "peerDependencies": {
+    "recompose": "^0.30.0",
+    "redux": "^4.0.0",
+    "react-redux": "^7.1.0"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
+  }
+}
