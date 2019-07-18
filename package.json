@@ -1,7 +1,7 @@
 {
   "name": "@surglogs/with-dispatch-on-update",
   "version": "1.0.0",
-  "description": "HOC TODO:",
+  "description": "HOC that allows you to conditionally dispatch a Redux action",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest ./src",
