@@ -6,6 +6,12 @@ withDispatchOnUpdate is a [Higher Order Component](https://reactjs.org/docs/high
 
 `npm i @surglogs/with-dispatch-on-update`
 
+**Import:**
+
+```js
+  import withDispatchOnUpdate from ‘@surglogs/with-dispatch-on-update’
+```
+
 ## What is this library good for?
 
 Often you need to dispatch an action in your component (usually to call API or navigate to other screen) when some situation arises (missing data, incoming props changed somehow etc.). The question is: where and how should you do this? We created a higher order component that helps to achieve that.
@@ -32,7 +38,7 @@ export const loadTodos = () => {
 
   return {
     type: LOAD_TODOS,
-    payload: promise,
+    payload: promise
   }
 }
 ```
@@ -48,7 +54,7 @@ Next we move on to define our reducer:
 
 const initialState = {
   todos: null,
-  pending: false,
+  pending: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -88,15 +94,15 @@ const shouldLoadTodos = (state, props) => {
 }
 
 const mapStateToProps = (state, props) => ({
-  todos: state.todos,
+  todos: state.todos
 })
 
 const VisibleTodoList = compose(
   withDispatchOnUpdate({
     action: loadTodos,
-    condition: shouldLoadTodos,
+    condition: shouldLoadTodos
   }),
-  connect(mapStateToProps),
+  connect(mapStateToProps)
 )(TodoList)
 
 export default VisibleTodoList
@@ -109,7 +115,7 @@ The fetching of todos is managed by our HOC `withDispatchOnUpdate`
 ```js
 withDispatchOnUpdate({
   action: loadTodos,
-  condition: shouldLoadTodos,
+  condition: shouldLoadTodos
 })
 ```
 
@@ -122,12 +128,12 @@ We will extend our previous example a little bit. Let's say our app now can have
 We have to adjust our action that fetches the todos:
 
 ```js
-export const loadTodos = listId => {
+export const loadTodos = (listId) => {
   const promise = api.getTodos(listId)
 
   return {
     type: LOAD_TODOS,
-    payload: promise,
+    payload: promise
   }
 }
 ```
