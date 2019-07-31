@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "HOC that allows you to conditionally dispatch a Redux action",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest ./src",
     "build": "rm -rf ./lib && ./node_modules/.bin/babel -e 0 ./src -d ./lib",
