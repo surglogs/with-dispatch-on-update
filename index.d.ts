@@ -9,3 +9,5 @@ declare const withDispatchOnUpdate: ({
   args?: any[]
   connector?: object | ((state: any, props: any) => any)
 }) => <T>(component: T) => T
+
+export = withDispatchOnUpdate
