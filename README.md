@@ -1,5 +1,7 @@
 # withDispatchOnUpdate
 
+[![Build Status](https://travis-ci.org/surglogs/with-dispatch-on-update.svg?branch=master)](https://travis-ci.org/surglogs/with-dispatch-on-update)
+
 withDispatchOnUpdate is a [Higher Order Component](https://reactjs.org/docs/higher-order-components.html) that allows you to conditionally dispatch a [Redux](https://redux.js.org/) [action](https://redux.js.org/basics/actions)
 
 ## Instalation
