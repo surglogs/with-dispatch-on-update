@@ -11,7 +11,7 @@ withDispatchOnUpdate is a [Higher Order Component](https://reactjs.org/docs/high
 **Import:**
 
 ```js
-  import withDispatchOnUpdate from ‘@surglogs/with-dispatch-on-update’
+  import withDispatchOnUpdate from '@surglogs/with-dispatch-on-update'
 ```
 
 ## What is this library good for?
