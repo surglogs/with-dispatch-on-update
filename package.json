@@ -1,6 +1,6 @@
 {
   "name": "@surglogs/with-dispatch-on-update",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "HOC that allows you to conditionally dispatch a Redux action",
   "main": "lib/index.js",
   "types": "index.d.ts",

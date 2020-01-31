@@ -37,6 +37,7 @@ const withDispatchOnUpdate = ({
   condition = () => true,
   args = [],
   connector = {},
+  shouldRequireAllProps = true,
 }) => {
   return connect(
     (state, props) => ({
@@ -49,7 +50,7 @@ const withDispatchOnUpdate = ({
     ({ [CONNECTED_PROPS]: connectedProps, state }, { boundAction }, props) => {
       const mergedProps = { ...props, ...connectedProps }
       if (
-        hasRequiredProps(mergedProps, args) &&
+        (!shouldRequireAllProps || hasRequiredProps(mergedProps, args)) &&
         condition(state, mergedProps)
       ) {
         boundAction(...getArgValues(mergedProps, args))
