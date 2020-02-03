@@ -11,7 +11,7 @@ withDispatchOnUpdate is a [Higher Order Component](https://reactjs.org/docs/high
 **Import:**
 
 ```js
-  import withDispatchOnUpdate from '@surglogs/with-dispatch-on-update'
+import withDispatchOnUpdate from '@surglogs/with-dispatch-on-update'
 ```
 
 ## What is this library good for?
@@ -40,7 +40,7 @@ export const loadTodos = () => {
 
   return {
     type: LOAD_TODOS,
-    payload: promise
+    payload: promise,
   }
 }
 ```
@@ -56,7 +56,7 @@ Next we move on to define our reducer:
 
 const initialState = {
   todos: null,
-  pending: false
+  pending: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -96,15 +96,15 @@ const shouldLoadTodos = (state, props) => {
 }
 
 const mapStateToProps = (state, props) => ({
-  todos: state.todos
+  todos: state.todos,
 })
 
 const VisibleTodoList = compose(
   withDispatchOnUpdate({
     action: loadTodos,
-    condition: shouldLoadTodos
+    condition: shouldLoadTodos,
   }),
-  connect(mapStateToProps)
+  connect(mapStateToProps),
 )(TodoList)
 
 export default VisibleTodoList
@@ -117,7 +117,7 @@ The fetching of todos is managed by our HOC `withDispatchOnUpdate`
 ```js
 withDispatchOnUpdate({
   action: loadTodos,
-  condition: shouldLoadTodos
+  condition: shouldLoadTodos,
 })
 ```
 
@@ -130,12 +130,12 @@ We will extend our previous example a little bit. Let's say our app now can have
 We have to adjust our action that fetches the todos:
 
 ```js
-export const loadTodos = (listId) => {
+export const loadTodos = listId => {
   const promise = api.getTodos(listId)
 
   return {
     type: LOAD_TODOS,
-    payload: promise
+    payload: promise,
   }
 }
 ```
@@ -223,3 +223,18 @@ compose(
 ```
 
 It is just a shortcut for using connect, therefore use whatever you like more.
+
+## Options
+
+The provided action will be fired only if none of the arguments in the `args` array is `null` or `undefined`. If you want to prevent this, you can pass an optional param `shouldRequireAllProps: false`:
+
+```js
+withDispatchOnUpdate({
+  action: myAction,
+  condition: myCondition,
+  args: ['a', 'b', 'c'],
+  shouldRequireAllProps: false
+})
+```
+
+Now the action will be fired even if `a`, `b` or `c` prop is `null` or `undefined` and `myCondition` is satisfied.
