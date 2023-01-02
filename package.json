@@ -6,8 +6,8 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "jest ./src",
-    "build": "rm -rf ./lib && ./node_modules/.bin/babel -e 0 ./src -d ./lib",
-    "prepare": "npm test && npm run build"
+    "build": "rm -rf ./lib && ./node_modules/.bin/babel ./src -d ./lib",
+    "prepublishOnly": "npm test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -42,14 +42,14 @@
     "recompose": "^0.30.0",
     "redux": "^4.0.4",
     "sinon": "^7.3.2",
-    "ramda": "^0.27.0"
+    "ramda": "^0.27.0",
+    "is-plain-object": "^3.0.0"
   },
   "peerDependencies": {
-    "redux": "^4.0.0",
-    "react-redux": "^7.1.0",
-    "ramda": "^0.27.0"
+    "redux": ">=4.0.0",
+    "react-redux": ">=7.1.0",
+    "ramda": "*",
+    "is-plain-object": ">=3.0.0"
   },
-  "dependencies": {
-    "is-plain-object": "^3.0.0"
-  }
+  "dependencies": {}
 }
