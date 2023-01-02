@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "jest ./src",
+    "test": "jest ./src --passWithNoTests",
     "build": "rm -rf ./lib && ./node_modules/.bin/babel ./src -d ./lib",
     "prepublishOnly": "npm test && npm run build"
   },
